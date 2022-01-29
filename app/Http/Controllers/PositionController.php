@@ -14,7 +14,7 @@ class PositionController extends Controller
      */
     public function index()
     {
-        //
+        return Position::all();
     }
 
     /**
@@ -35,7 +35,7 @@ class PositionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        return Position::create($request->all());
     }
 
     /**
@@ -67,9 +67,12 @@ class PositionController extends Controller
      * @param  \App\Models\Position  $position
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Position $position)
+    // public function update(Request $request, Position $position)
+    public function update(Request $request, $id)
     {
-        //
+        $position = Position::find($id);
+        $position->update($request->all());
+        return $position;
     }
 
     /**
@@ -78,8 +81,9 @@ class PositionController extends Controller
      * @param  \App\Models\Position  $position
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Position $position)
+    public function destroy($id)
     {
         //
+        Position::destroy($id);
     }
 }
