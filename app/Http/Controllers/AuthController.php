@@ -42,7 +42,7 @@ class AuthController extends Controller
  
         }else {
  
-            return response( "Hiba! A bejelentkezés sikertelen", [ "error" => "Hibás adatok" ]);
+            return response( ["Hiba! A bejelentkezés sikertelen"], 401);
         }
     }
     public function logout( Request $request ) {        
