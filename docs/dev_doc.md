@@ -37,3 +37,23 @@ cp .env.example .env
 | /api/positions | post    | nem        |             |        |
 | /api/positions/{id} | put     | nem        |             |        |
 | /api/positions/{id} | delete  | nem        |             |        |
+
+## Új dolgozó
+
+```json
+{
+    "name": "Valaki",
+    "city": "Valahol",
+    "salary": 10
+}
+```
+
+## Login
+
+```json
+{
+    "name": "valaki",
+    "password": "titok"
+}
+```
+Kapunk egy Bearer tokent.
